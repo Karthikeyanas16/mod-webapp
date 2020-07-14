@@ -4,7 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map }from 'rxjs/operators';
 import { User } from '../models/user';
 
-let API_URL = "http://localhost:8765/api/user/service";
+// let API_URL = "http://localhost:8765/api/user/service";
+let API_URL = "http://localhost:8080/api/user/";
 
 
 @Injectable({
@@ -30,7 +31,7 @@ export class UserService {
         authorization: 'Basic ' + btoa(user.username + ':' + user.password)
       }:{}
     );
-    return this.http.get<any>(API_URL + "logiin", {headers: headers}).pipe(
+    return this.http.get<any>(API_URL + "login", {headers: headers}).pipe(
       map(response => {
         if(response) {
           localStorage.setItem('currentUser', JSON.stringify(response));

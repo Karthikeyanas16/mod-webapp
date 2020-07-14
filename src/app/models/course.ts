@@ -1,7 +1,7 @@
 export class Course {
     id: number;
-    title: string="";
-    author: string="";
+    courseName: string="";
+    trainer: string="";
     category: string="";
     publishDate: any;
 }
