@@ -6,7 +6,7 @@ import { Course } from '../../models/course';
 import { Transaction } from '../../models/transaction';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
-
+import * as data from './course.json';
 
 @Component({
   selector: 'app-home',
@@ -25,12 +25,13 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.courseList = (data as any).default;
   }
 
   findAllCourses() {
     this.courseService.findAllCourses().subscribe(data => {
-      //this.courseList = data;
-      this.courseList = [{'category':'Development', 'courseName':'Java', 'id': 100, 'publishDate':'08-07-2020', 'trainer':'James Gosling'}];
+      this.courseList = data;
+      //this.courseList = [{'category':'Development', 'courseName':'Java', 'id': 100, 'publishDate':'08-07-2020', 'trainer':'James Gosling'}];
     });
   }
 

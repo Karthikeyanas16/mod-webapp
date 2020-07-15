@@ -1,0 +1,29 @@
+
+
+[
+ {
+   "courseName":"Java",
+   "trainer":"James Gosling",
+   "category":"Program Lanugages"
+ },
+  {
+   "courseName":"Angular",
+   "trainer":"Tommy",
+   "category":"Program Lanugages"
+ },
+  {
+   "courseName":"React",
+   "trainer":"Alex",
+   "category":"Program Lanugages"
+ },
+  {
+   "courseName":"Jenkins",
+   "trainer":"James Gosling",
+   "category":"DevOps"
+ },
+  {
+   "courseName":"Docker",
+   "trainer":"Jon",
+   "category":"Devops"
+ }
+]
