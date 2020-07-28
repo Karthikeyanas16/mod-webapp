@@ -1,24 +1,55 @@
-<header fxLayoutAlign="space-between center">
-    <div>Logo</div>
-    <div fxLayout="row" fxLayoutGap="20px">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+<header >
 
-        <div class="navbar-nav mr-auto">
+    <!-- <img src="../../../../assets/img/navbar_image.png" class="img-fluid" alt="Responsive image">
+    <div>Logo</div> -->
+    <!-- <div fxLayout="row" fxLayoutGap="20px"> -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-between">
+
+        <div class="navbar-nav mr-auto" fxLayoutAlign="space-between center">
+
+            <!-- <a href="#" class="navbar-left"><img src="../../../../assets/img/navbar_image.png"></a> -->
+
+            <a class="navbar-brand" href="#">Mentor On Demand</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
             <li class="nav-item">
                 <a href="/home" class="nav-link">Home</a>
             </li>
-            <li class="nav-item" *ngIf="currentUser">
+
+            <li class="nav-item dropdown" *ngIf="currentUser">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Courses
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/courseEnrolled">Enrolled</a>
+                  <a class="dropdown-item" href="/courseCompleted">Completed</a>
+                </div>
+            </li>
+
+            
+            <!-- <li class="nav-item" *ngIf="currentUser">
                 <a href="/courseEnrolled" class="nav-link">Course Enrolled</a>
             </li>
             <li class="nav-item" *ngIf="currentUser">
                 <a href="/courseCompleted" class="nav-link">Course Completed</a>
-            </li>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
+            </li> -->
+            
+       
         </div>
-    
+
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"><i class="fa fa-search"></i>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <!-- <form class="form-inline ml-auto">
+            <input type="text" class="form-control mr-sm-2" placeholder="Search">
+            <button type="submit" class="btn btn-outline-light">Search</button>
+        </form>
+     -->
+
+     <div class="navbar-nav mr-auto" fxLayoutAlign="space-between center">
         <div class="navbar-nav ml-auto" *ngIf="!currentUser">
             <li class="nav-item">
                 <a href="/register" class="nav-link">
@@ -33,14 +64,16 @@
         <div class="navbar-nav mr-auto" *ngIf="currentUser">
             <li class="nav-item">
                 <a href="/profile" class="nav-link">
-                <span class="glyphicon glyphicon-user"></span>{{currentUser.name}}</a>
+                <!-- <span class="glyphicon glyphicon-user"></span>{{currentUser.name}}</a> -->
+                <span class="badge badge-info">{{currentUser.name}}</span></a>
             </li>
             <li class="nav-item">
                 <a href (click)="logOut()" class="nav-link">
                 <span class="glyphicon glyphicon-log-in"></span> Logout</a>
             </li>
         </div>
+        </div>
     
     </nav>
-</div>
+
 </header>

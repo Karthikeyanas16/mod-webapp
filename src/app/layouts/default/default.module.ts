@@ -15,6 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwPaginationModule } from 'jw-angular-pagination';
+
 
 
 
@@ -32,12 +34,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FlexLayoutModule,
     SharedModule,
-
+    
      BrowserModule,
      AppRoutingModule,
   //  DefaultModule,
   //  HttpClientModule,
-       FormsModule
+       FormsModule,
+       JwPaginationModule
   //  ReactiveFormsModule
   ]
 })
